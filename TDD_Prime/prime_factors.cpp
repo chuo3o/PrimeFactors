@@ -5,12 +5,16 @@ class PrimeFactors {
 public:
 	vector<int> of(int num) {
 		vector<int> result = {};
-		if (1 < num && num < 4) {
-			result.push_back(num);
-		}
-		else if (num > 3) {
-			result.push_back(2);
-			result.push_back(2);
+		if (num > 1) {
+			if (num > 3) {
+				while (num % 2 == 0) {
+					result.push_back(2);
+					num /= 2;
+				}
+			}
+			else {
+				result.push_back(num);
+			}
 		}
 		
 		return result;
